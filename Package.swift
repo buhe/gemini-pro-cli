@@ -6,7 +6,6 @@ import PackageDescription
 let package = Package(
     name: "gemini-pro-cli",
     platforms: [
-        .iOS(.v15),
         .macOS(.v12)
     ],
     products: [
