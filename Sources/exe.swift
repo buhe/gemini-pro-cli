@@ -23,7 +23,7 @@ struct Execute {
                 prompt = argument
             }
         }
-        print(prompt)
+//        print(prompt)
         let llm = Gemini()
         let r = await llm.generate(text: prompt)
         print("🎄\(r!.llm_output!)")
