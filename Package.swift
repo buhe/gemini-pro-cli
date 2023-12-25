@@ -8,6 +8,9 @@ let package = Package(
     products: [
         .executable(name: "gemini-pro-cli", targets: ["gemini-pro-cli"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/buhe/langchain-swift", .upToNextMajor(from: "0.43.0")),
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
