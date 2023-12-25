@@ -7,14 +7,22 @@ import Foundation
 struct Execute {
     static func main() async throws {
         if let myEnvVar = ProcessInfo.processInfo.environment["GOOGLEAI_API_KEY"] {
-            print("The value of GOOGLEAI_API_KEY is \(myEnvVar)")
+//            print("The value of GOOGLEAI_API_KEY is \(myEnvVar)")
             Env.initSet(["GOOGLEAI_API_KEY": myEnvVar])
         } else {
-            print("MY_ENV_VAR is not set")
+            print("GOOGLEAI_API_KEY is not set")
         }
-        
+        let arguments = CommandLine.arguments
+        var prompt = ""
+        for (index, argument) in arguments.enumerated() {
+            if index > 0 {
+//                print("Argument \(index): \(argument)")
+                prompt = "\(prompt) \(argument)"
+            }
+        }
+        print(prompt)
         let llm = Gemini()
-        let r = await llm.generate(text: "hi")
-        print("Hello, world!! \(r!.llm_output!)")
+        let r = await llm.generate(text: prompt)
+        print("🎄\(r!.llm_output!)")
     }
 }
