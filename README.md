@@ -10,7 +10,7 @@ Set this at ~/.zshrc
 export GOOGLEAI_API_KEY=YOUR_KEY
 ```
 [Google AI key](https://makersuite.google.com/app/apikey)
-
+### Other 
 Cooperate [glow](https://github.com/charmbracelet/glow)
 ```
 gemini-pro-cli Go implements bubble sorting and explains | glow
