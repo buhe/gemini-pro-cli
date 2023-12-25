@@ -15,9 +15,12 @@ struct Execute {
         let arguments = CommandLine.arguments
         var prompt = ""
         for (index, argument) in arguments.enumerated() {
-            if index > 0 {
+            if index > 1 {
 //                print("Argument \(index): \(argument)")
                 prompt = "\(prompt) \(argument)"
+            }
+            if index == 1 {
+                prompt = argument
             }
         }
         print(prompt)
